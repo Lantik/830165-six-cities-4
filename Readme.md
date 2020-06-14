@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов» [![Build status][travis-image]][travis-url]
 
 * Студент: [Владислав Светлов](https://up.htmlacademy.ru/react/4/user/830165).
-* Наставник: `Неизвестно`.
+* Наставник: [Даниил Батаев](https://up.htmlacademy.ru/react/4/user/1502707).
 
 ---
 
