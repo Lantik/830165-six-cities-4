@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/app.jsx';
 
-const settings = {
-  OFFERS_COUNT: 500
-};
+const RENT_OFFERS = [
+  `Beautiful & luxurious apartment at great location`,
+  `Wood and stone place`,
+  `Stone and wood place`
+];
 
 ReactDOM.render(
     <App
-      offersCount={settings.OFFERS_COUNT}
+      offers={RENT_OFFERS}
     ></App>,
     document.querySelector(`#root`)
 );
