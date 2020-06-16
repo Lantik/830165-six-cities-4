@@ -4,7 +4,10 @@ import Main from '../main/main.jsx';
 
 const App = ({offers}) => {
   return (<React.Fragment>
-    <Main offers={offers}></Main>
+    <Main
+      offers={offers}
+      onOfferHeaderClick={() => {}}
+    />
   </React.Fragment>);
 };
 
