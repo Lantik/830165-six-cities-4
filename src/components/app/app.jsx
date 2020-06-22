@@ -6,13 +6,12 @@ const App = ({offers}) => {
   return (<React.Fragment>
     <Main
       offers={offers}
-      onOfferHeaderClick={() => {}}
     />
   </React.Fragment>);
 };
 
 App.propTypes = {
-  offers: PropTypes.arrayOf(PropTypes.string).isRequired
+  offers: PropTypes.array.isRequired
 };
 
 export default App;
