@@ -1,16 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/app.jsx';
-
-const RENT_OFFERS = [
-  `Beautiful & luxurious apartment at great location`,
-  `Wood and stone place`,
-  `Stone and wood place`
-];
+import offers from './mocks/offers.js';
 
 ReactDOM.render(
     <App
-      offers={RENT_OFFERS}
+      offers={offers}
     ></App>,
     document.querySelector(`#root`)
 );
