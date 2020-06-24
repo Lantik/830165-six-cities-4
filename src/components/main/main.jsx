@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import OfferList from '../offer-list/offer-list.jsx';
 
-const Main = ({offers}) => {
+const Main = ({offers, onOfferHeaderClick}) => {
   const offersCount = offers.length;
 
   return (<div className="page page--gray page--main">
@@ -95,7 +95,10 @@ const Main = ({offers}) => {
               </select>
               --> */}
             </form>
-            <OfferList offers={offers} />
+            <OfferList
+              offers={offers}
+              onOfferHeaderClick={onOfferHeaderClick}
+            />
           </section>
           <div className="cities__right-section">
             <section className="cities__map map"></section>
@@ -107,7 +110,8 @@ const Main = ({offers}) => {
 };
 
 Main.propTypes = {
-  offers: PropTypes.array.isRequired
+  offers: PropTypes.array.isRequired,
+  onOfferHeaderClick: PropTypes.func.isRequired
 };
 
 export default Main;

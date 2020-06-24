@@ -4,7 +4,7 @@ import Offer from '../offer/offer.jsx';
 
 class OfferList extends PureComponent {
   render() {
-    const {offers} = this.props;
+    const {offers, onOfferHeaderClick} = this.props;
 
     return (
       <div className="cities__places-list places__list tabs__content">
@@ -12,7 +12,7 @@ class OfferList extends PureComponent {
           <Offer
             key={offer.id}
             offer={offer}
-            onOfferHeaderClick={() => {}}
+            onOfferHeaderClick={onOfferHeaderClick}
             onMouseEnter={(card) => {
               this.setState({activeCard: card});
             }}
@@ -23,7 +23,8 @@ class OfferList extends PureComponent {
 }
 
 OfferList.propTypes = {
-  offers: PropTypes.array.isRequired
+  offers: PropTypes.array.isRequired,
+  onOfferHeaderClick: PropTypes.func.isRequired
 };
 
 export default OfferList;
