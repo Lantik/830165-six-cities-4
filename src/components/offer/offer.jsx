@@ -1,19 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {calculateRatingPercentage} from '../../utils/offer/offer.js';
 
 const Offer = ({offer, onOfferHeaderClick, onMouseEnter}) => {
-  const {name, price, rating, src, type, inBookmarks} = offer;
+  const {name, price, rating, isPremium, photos, type, inBookmarks} = offer;
   const bookmarkHiddenText = inBookmarks ? `In Bookmarks` : `To bookmarks`;
   const bookmarkIcon = inBookmarks ? `#icon-bookmark-active` : `#icon-bookmark`;
+  const ratingPercentage = calculateRatingPercentage(rating);
+  const photo = photos[0];
 
   return (
     <article className="cities__place-card place-card" onMouseEnter={() => onMouseEnter(offer)}>
-      <div className="place-card__mark">
-        <span>Premium</span>
-      </div>
+      {isPremium &&
+        (<div className="place-card__mark">
+          <span>Premium</span>
+        </div>
+        )}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
-          <img className="place-card__image" src={src} width="260" height="200" alt={name}/>
+          <img className="place-card__image" src={photo} width="260" height="200" alt={name}/>
         </a>
       </div>
       <div className="place-card__info">
@@ -31,11 +36,11 @@ const Offer = ({offer, onOfferHeaderClick, onMouseEnter}) => {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: rating + `%`}}></span>
+            <span style={{width: ratingPercentage + `%`}}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
-        <h2 className="place-card__name" onClick={onOfferHeaderClick}>
+        <h2 className="place-card__name" onClick={() => onOfferHeaderClick(offer)}>
           <a href="#">{name}</a>
         </h2>
         <p className="place-card__type">{type}</p>
@@ -52,9 +57,10 @@ Offer.propTypes = {
     price: PropTypes.number.isRequired,
     rating: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
-    inBookmarks: PropTypes.bool.isRequired
+    inBookmarks: PropTypes.bool.isRequired,
+    isPremium: PropTypes.bool.isRequired,
+    photos: PropTypes.arrayOf(PropTypes.string).isRequired
   }).isRequired
 };
 

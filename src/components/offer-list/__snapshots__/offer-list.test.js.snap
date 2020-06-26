@@ -80,7 +80,7 @@ exports[`<OfferList/> rendered correctly 1`] = `
           <span
             style={
               Object {
-                "width": "43%",
+                "width": "66%",
               }
             }
           />
@@ -104,7 +104,7 @@ exports[`<OfferList/> rendered correctly 1`] = `
       <p
         className="place-card__type"
       >
-        Apartment
+        apartment
       </p>
     </div>
   </article>
@@ -112,13 +112,6 @@ exports[`<OfferList/> rendered correctly 1`] = `
     className="cities__place-card place-card"
     onMouseEnter={[Function]}
   >
-    <div
-      className="place-card__mark"
-    >
-      <span>
-        Premium
-      </span>
-    </div>
     <div
       className="cities__image-wrapper place-card__image-wrapper"
     >
@@ -184,7 +177,7 @@ exports[`<OfferList/> rendered correctly 1`] = `
           <span
             style={
               Object {
-                "width": "67%",
+                "width": "76%",
               }
             }
           />
@@ -208,7 +201,7 @@ exports[`<OfferList/> rendered correctly 1`] = `
       <p
         className="place-card__type"
       >
-        Apartment
+        hotel
       </p>
     </div>
   </article>
@@ -312,7 +305,7 @@ exports[`<OfferList/> rendered correctly 1`] = `
       <p
         className="place-card__type"
       >
-        Apartment
+        room
       </p>
     </div>
   </article>
@@ -392,7 +385,7 @@ exports[`<OfferList/> rendered correctly 1`] = `
           <span
             style={
               Object {
-                "width": "70%",
+                "width": "81.99999999999999%",
               }
             }
           />
@@ -416,7 +409,7 @@ exports[`<OfferList/> rendered correctly 1`] = `
       <p
         className="place-card__type"
       >
-        Apartment
+        house
       </p>
     </div>
   </article>

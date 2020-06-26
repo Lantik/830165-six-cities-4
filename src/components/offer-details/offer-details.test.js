@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Offer from './offer.jsx';
+import OrderDetails from './offer-details.jsx';
 
 const mock = {
   offer: {
@@ -24,15 +24,13 @@ const mock = {
   }
 };
 
-it(`<Offer/> rendered correctly`, () => {
+it(`<OrderDetails/> component rendered correctly`, () => {
   const {offer} = mock;
-
   const tree = renderer
-    .create(<Offer
+    .create(<OrderDetails
       offer={offer}
-      onMouseEnter={() => {}}
-      onOfferHeaderClick={() => {}}
-    />);
+    />).toJSON();
 
   expect(tree).toMatchSnapshot();
 });
+
