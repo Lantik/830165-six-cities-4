@@ -17,6 +17,7 @@ const mock = {
       bedroomsCount: 1,
       maxGuestsNumber: 3,
       conveniences: [`Wifi`, `Heating`, `Kitchen`, `Cable TV`],
+      coordinates: [52.369553943508, 4.85309666406198],
       owner: {
         name: `Angelina`,
         avatar: `img/avatar-angelina.jpg`,
@@ -36,6 +37,7 @@ const mock = {
       bedroomsCount: 2,
       maxGuestsNumber: 2,
       conveniences: [`Wifi`, `Heating`, `Kitchen`, `Cable TV`],
+      coordinates: [52.369553943508, 4.85309666406198],
       owner: {
         name: `Angelina`,
         avatar: `img/avatar-angelina.jpg`,
@@ -55,6 +57,7 @@ const mock = {
       bedroomsCount: 3,
       maxGuestsNumber: 1,
       conveniences: [`Wifi`, `Kitchen`, `Cable TV`],
+      coordinates: [52.369553943508, 4.85309666406198],
       owner: {
         name: `Mike`,
         avatar: `img/avatar-angelina.jpg`,
@@ -74,6 +77,7 @@ const mock = {
       bedroomsCount: 4,
       maxGuestsNumber: 5,
       conveniences: [`Kitchen`, `Cable TV`],
+      coordinates: [52.369553943508, 4.85309666406198],
       owner: {
         name: `John`,
         avatar: `img/avatar-angelina.jpg`,
@@ -85,10 +89,16 @@ const mock = {
 
 it(`<App/> rendered correctly`, () => {
   const {offers} = mock;
+  const mockedHtmlElement = document.createElement(`div`);
+
   const tree = renderer
     .create(<App
       offers={offers}
-    />)
+    />, {
+      createNodeMock: () => {
+        return mockedHtmlElement;
+      }
+    })
     .toJSON();
 
   expect(tree).toMatchSnapshot();

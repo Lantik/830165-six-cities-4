@@ -60,9 +60,6 @@ class App extends PureComponent {
           <Route exact path="/offer">
             <OfferDetails offer={offer}/>
           </Route>
-          <Route exact path="/dev-component">
-            <OfferDetails offer={offer}/>
-          </Route>
         </Switch>
       </BrowserRouter>
     );

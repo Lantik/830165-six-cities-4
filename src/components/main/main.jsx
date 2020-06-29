@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import OfferList from '../offer-list/offer-list.jsx';
+import Map from '../map/map.jsx';
 
 const Main = ({offers, onOfferHeaderClick}) => {
   const offersCount = offers.length;
+  const offersCoords = offers.map((it) => it.coordinates);
 
   return (<div className="page page--gray page--main">
     <header className="header">
@@ -101,7 +103,7 @@ const Main = ({offers, onOfferHeaderClick}) => {
             />
           </section>
           <div className="cities__right-section">
-            <section className="cities__map map"></section>
+            <Map offersCoords={offersCoords}/>
           </div>
         </div>
       </div>
