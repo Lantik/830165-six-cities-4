@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {calculateRatingPercentage} from '../../utils/offer/offer.js';
 
-const Offer = ({offer, onOfferHeaderClick, onMouseEnter}) => {
+const Offer = ({offer, onOfferHeaderClick, onMouseEnter, articleClassName, imageWrapperClassName}) => {
   const {name, price, rating, isPremium, photos, type, inBookmarks} = offer;
   const bookmarkHiddenText = inBookmarks ? `In Bookmarks` : `To bookmarks`;
   const bookmarkIcon = inBookmarks ? `#icon-bookmark-active` : `#icon-bookmark`;
@@ -10,13 +10,13 @@ const Offer = ({offer, onOfferHeaderClick, onMouseEnter}) => {
   const photo = photos[0];
 
   return (
-    <article className="cities__place-card place-card" onMouseEnter={() => onMouseEnter(offer)}>
+    <article className={`${articleClassName} place-card`} onMouseEnter={() => onMouseEnter(offer)}>
       {isPremium &&
         (<div className="place-card__mark">
           <span>Premium</span>
         </div>
         )}
-      <div className="cities__image-wrapper place-card__image-wrapper">
+      <div className={`${imageWrapperClassName} place-card__image-wrapper`}>
         <a href="#">
           <img className="place-card__image" src={photo} width="260" height="200" alt={name}/>
         </a>
@@ -52,6 +52,8 @@ const Offer = ({offer, onOfferHeaderClick, onMouseEnter}) => {
 Offer.propTypes = {
   onOfferHeaderClick: PropTypes.func.isRequired,
   onMouseEnter: PropTypes.func.isRequired,
+  articleClassName: PropTypes.string.isRequired,
+  imageWrapperClassName: PropTypes.string.isRequired,
   offer: PropTypes.shape({
     id: PropTypes.number.isRequired,
     price: PropTypes.number.isRequired,

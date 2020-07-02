@@ -32,6 +32,8 @@ it(`<Offer/> rendered correctly`, () => {
       offer={offer}
       onMouseEnter={() => {}}
       onOfferHeaderClick={() => {}}
+      articleClassName={`test-article-class`}
+      imageWrapperClassName={`test-image-wrapper-class`}
     />);
 
   expect(tree).toMatchSnapshot();

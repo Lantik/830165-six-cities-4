@@ -41,7 +41,10 @@ class App extends PureComponent {
           />);
       case APP_SCREENS.OFFER_PROPERTY:
         return (
-          <OfferDetails offer={offer} />
+          <OfferDetails
+            offer={offer}
+            offers={offers}
+            onOfferHeaderClick={this._handleOfferTitleClick}/>
         );
       default :
         return null;
@@ -49,6 +52,7 @@ class App extends PureComponent {
   }
 
   render() {
+    const {offers} = this.props;
     const {offer} = this.state;
 
     return (
@@ -58,7 +62,9 @@ class App extends PureComponent {
             {this._renderAccomodationScreen()}
           </Route>
           <Route exact path="/offer">
-            <OfferDetails offer={offer}/>
+            <OfferDetails offer={offer} offers={offers} onOfferHeaderClick={this._handleOfferTitleClick}/>
+          </Route>
+          <Route exact path="/dev-component">
           </Route>
         </Switch>
       </BrowserRouter>

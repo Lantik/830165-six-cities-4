@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NearbyOffer/> rendered correctly 1`] = `
+<Offer
+  articleClassName="test-class"
+  imageWrapperClassName="test-class"
+  offer={Object {}}
+  onMouseEnter={[Function]}
+  onOfferHeaderClick={[Function]}
+/>
+`;

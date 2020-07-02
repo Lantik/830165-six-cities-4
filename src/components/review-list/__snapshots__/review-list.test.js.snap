@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ReviewList /> rendered correctly 1`] = `
+<ul
+  className="reviews__list"
+>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "id": 0,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "id": 1,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "id": 2,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "id": 3,
+        }
+      }
+    />
+  </li>
+</ul>
+`;

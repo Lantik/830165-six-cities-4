@@ -1,13 +1,12 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import Offer from '../offer/offer.jsx';
 
 class OfferList extends PureComponent {
   render() {
-    const {offers, onOfferHeaderClick} = this.props;
+    const {offers, onOfferHeaderClick, className, offerComponent: Offer} = this.props;
 
     return (
-      <div className="cities__places-list places__list tabs__content">
+      <div className={className}>
         {offers.map((offer) =>
           <Offer
             key={offer.id}
@@ -23,6 +22,8 @@ class OfferList extends PureComponent {
 }
 
 OfferList.propTypes = {
+  offerComponent: PropTypes.func.isRequired,
+  className: PropTypes.string.isRequired,
   offers: PropTypes.array.isRequired,
   onOfferHeaderClick: PropTypes.func.isRequired
 };

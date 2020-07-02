@@ -14,8 +14,8 @@ class Map extends PureComponent {
     this._mapRef = React.createRef();
   }
 
-  componentDidMount() {
-    const {offersCoords} = this.props;
+  _createMap() {
+    const {coords} = this.props;
     const mapElement = this._mapRef.current;
 
     const icon = Leaflet.icon({iconUrl: ICON_PATH, iconSize: ICON_SIZE});
@@ -25,21 +25,36 @@ class Map extends PureComponent {
     })
     .addTo(map);
 
-    offersCoords.forEach((it) => Leaflet.marker(it, {icon}).addTo(map));
+    coords.forEach((it) => Leaflet.marker(it, {icon}).addTo(map));
+
+    this.map = map;
+  }
+
+  componentDidMount() {
+    this._createMap();
+  }
+
+  componentDidUpdate() {
+    this.map.remove();
+    this._createMap();
   }
 
   render() {
+    const {className} = this.props;
+    const containerClassName = `${className} map`;
+
     return (
       <section id="map"
         ref={this._mapRef}
-        className="cities__map map">
+        className={containerClassName}>
       </section>
     );
   }
 }
 
 Map.propTypes = {
-  offersCoords: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired
+  coords: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired,
+  className: PropTypes.string.isRequired
 };
 
 export default Map;
