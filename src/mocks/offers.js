@@ -12,6 +12,7 @@ export default [
     bedroomsCount: 1,
     maxGuestsNumber: 3,
     conveniences: [`Wifi`, `Heating`, `Kitchen`, `Cable TV`],
+    coordinates: [52.3909553943508, 4.85309666406198],
     owner: {
       name: `Angelina`,
       avatar: `img/avatar-angelina.jpg`,
@@ -30,6 +31,7 @@ export default [
     isPremium: true,
     bedroomsCount: 2,
     maxGuestsNumber: 2,
+    coordinates: [52.369553943508, 4.85309666406198],
     conveniences: [`Wifi`, `Heating`, `Kitchen`, `Cable TV`],
     owner: {
       name: `Angelina`,
@@ -49,6 +51,7 @@ export default [
     isPremium: false,
     bedroomsCount: 3,
     maxGuestsNumber: 1,
+    coordinates: [52.3909553943508, 4.929309666406198],
     conveniences: [`Wifi`, `Kitchen`, `Cable TV`],
     owner: {
       name: `Mike`,
@@ -68,6 +71,7 @@ export default [
     isPremium: true,
     bedroomsCount: 4,
     maxGuestsNumber: 5,
+    coordinates: [52.3809553943508, 4.939309666406198],
     conveniences: [`Kitchen`, `Cable TV`],
     owner: {
       name: `John`,
