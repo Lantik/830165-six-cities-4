@@ -311,15 +311,15 @@ exports[`<OfferDetails/> component rendered correctly 1`] = `
                 Array [
                   Object {
                     "avatar": "img/avatar-angelina.jpg",
-                    "date": 2009-02-18T22:00:00.000Z,
+                    "date": 1237420800000,
                     "id": 2,
                     "rating": 20,
-                    "text": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.",
+                    "text": "A quiet cozy and piscturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.",
                     "userName": "Katya",
                   },
                   Object {
                     "avatar": "img/avatar-max.jpg",
-                    "date": 2009-04-18T21:00:00.000Z,
+                    "date": 1242691200000,
                     "id": 3,
                     "rating": 99,
                     "text": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.",
@@ -562,7 +562,7 @@ exports[`<OfferDetails/> component rendered correctly 1`] = `
                 "reviews": Array [
                   Object {
                     "avatar": "img/avatar-angelina.jpg",
-                    "date": 2005-01-18T22:00:00.000Z,
+                    "date": 1108771200000,
                     "id": 1,
                     "rating": 10,
                     "text": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.",
@@ -605,7 +605,7 @@ exports[`<OfferDetails/> component rendered correctly 1`] = `
                 "reviews": Array [
                   Object {
                     "avatar": "img/avatar-max.jpg",
-                    "date": 2011-11-22T22:00:00.000Z,
+                    "date": 1324598400000,
                     "id": 0,
                     "rating": 70,
                     "text": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.",
@@ -613,7 +613,7 @@ exports[`<OfferDetails/> component rendered correctly 1`] = `
                   },
                   Object {
                     "avatar": "img/avatar.svg",
-                    "date": 2005-01-18T22:00:00.000Z,
+                    "date": 1108771200000,
                     "id": 4,
                     "rating": 10,
                     "text": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.",
@@ -657,7 +657,7 @@ exports[`<OfferDetails/> component rendered correctly 1`] = `
                 "reviews": Array [
                   Object {
                     "avatar": "img/avatar.svg",
-                    "date": 2009-04-18T21:00:00.000Z,
+                    "date": 1242691200000,
                     "id": 5,
                     "rating": 99,
                     "text": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.",
@@ -665,7 +665,7 @@ exports[`<OfferDetails/> component rendered correctly 1`] = `
                   },
                   Object {
                     "avatar": "img/avatar-max.jpg",
-                    "date": 2011-11-22T22:00:00.000Z,
+                    "date": 1324598400000,
                     "id": 6,
                     "rating": 70,
                     "text": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.",
@@ -673,7 +673,7 @@ exports[`<OfferDetails/> component rendered correctly 1`] = `
                   },
                   Object {
                     "avatar": "img/avatar-angelina.jpg",
-                    "date": 2005-01-18T22:00:00.000Z,
+                    "date": 1108771200000,
                     "id": 7,
                     "rating": 10,
                     "text": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.",

@@ -29,8 +29,8 @@ const mock = {
           userName: `Katya`,
           avatar: `img/avatar-angelina.jpg`,
           rating: 20,
-          text: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
-          date: new Date(`2009/02/19`)
+          text: `A quiet cozy and piscturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
+          date: Date.UTC(2009, 2, 19)
         },
         {
           id: 3,
@@ -38,7 +38,7 @@ const mock = {
           avatar: `img/avatar-max.jpg`,
           rating: 99,
           text: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
-          date: new Date(`2009/04/19`)
+          date: Date.UTC(2009, 4, 19)
         }
       ],
       nearByOffers: [2, 3, 4]
@@ -69,7 +69,7 @@ const mock = {
           avatar: `img/avatar-angelina.jpg`,
           rating: 10,
           text: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
-          date: new Date(`2005/01/19`)
+          date: Date.UTC(2005, 1, 19)
         }
       ],
       nearByOffers: [1, 3, 4]
@@ -100,7 +100,7 @@ const mock = {
           avatar: `img/avatar-max.jpg`,
           rating: 70,
           text: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
-          date: new Date(`2011/11/23`)
+          date: Date.UTC(2011, 11, 23)
         },
         {
           id: 4,
@@ -108,7 +108,7 @@ const mock = {
           avatar: `img/avatar.svg`,
           rating: 10,
           text: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
-          date: new Date(`2005/01/19`)
+          date: Date.UTC(2005, 1, 19)
         }
       ],
       nearByOffers: [1, 4]
@@ -139,7 +139,7 @@ const mock = {
           avatar: `img/avatar.svg`,
           rating: 99,
           text: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
-          date: new Date(`2009/04/19`)
+          date: Date.UTC(2009, 4, 19)
         },
         {
           id: 6,
@@ -147,7 +147,7 @@ const mock = {
           avatar: `img/avatar-max.jpg`,
           rating: 70,
           text: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
-          date: new Date(`2011/11/23`)
+          date: Date.UTC(2011, 11, 23)
         },
         {
           id: 7,
@@ -155,7 +155,7 @@ const mock = {
           avatar: `img/avatar-angelina.jpg`,
           rating: 10,
           text: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
-          date: new Date(`2005/01/19`)
+          date: Date.UTC(2005, 1, 19)
         },
       ],
       nearByOffers: [1, 2]
