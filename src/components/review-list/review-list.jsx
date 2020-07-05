@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import Review from '../review/review.jsx';
 
 const ReviewList = ({reviews}) => {
+  const reviewsToShow = reviews.slice(0, 10);
+
   return (
     <ul className="reviews__list">
-      {reviews.map((it) => (
+      {reviewsToShow.map((it) => (
         <li className="reviews__item" key={it.id}>
           <Review review={it} />
         </li>

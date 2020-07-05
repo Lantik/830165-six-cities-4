@@ -48,5 +48,71 @@ exports[`<ReviewList /> rendered correctly 1`] = `
       }
     />
   </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "id": 4,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "id": 5,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "id": 6,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "id": 7,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "id": 8,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "id": 9,
+        }
+      }
+    />
+  </li>
 </ul>
 `;
