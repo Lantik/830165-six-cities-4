@@ -303,7 +303,7 @@ exports[`<OfferDetails/> component rendered correctly 1`] = `
               <span
                 className="reviews__amount"
               >
-                1
+                2
               </span>
             </h2>
             <ReviewList

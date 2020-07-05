@@ -27,6 +27,7 @@ const OfferDetails = ({offer, offers, onOfferHeaderClick}) => {
   const offerLimitedPhotos = photos.slice(0, 6);
   const nearByOffers = offers.filter((it) => offer.nearByOffers.includes(it.id));
   const nearByOffersCoordinates = nearByOffers.map((it) => it.coordinates);
+  const reviewAmount = reviews.length;
 
   return (<div className="page">
     <header className="header">
@@ -127,7 +128,7 @@ const OfferDetails = ({offer, offers, onOfferHeaderClick}) => {
               </div>
             </div>
             <section className="property__reviews reviews">
-              <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">1</span></h2>
+              <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">{reviewAmount}</span></h2>
               <ReviewList reviews={reviews}/>
               <form className="reviews__form form" action="#" method="post">
                 <label className="reviews__label form__label" htmlFor="review">Your review</label>
