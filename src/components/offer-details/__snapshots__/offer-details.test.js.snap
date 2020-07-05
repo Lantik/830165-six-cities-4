@@ -492,6 +492,12 @@ exports[`<OfferDetails/> component rendered correctly 1`] = `
         </div>
       </div>
       <Map
+        activeCoords={
+          Array [
+            52.3909553943508,
+            4.85309666406198,
+          ]
+        }
         className="property__map"
         coords={
           Array [

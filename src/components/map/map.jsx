@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Leaflet from 'leaflet';
 
 const ICON_PATH = `img/pin.svg`;
+const ACTIVE_ICON_PATH = `img/pin-active.svg`;
 const ICON_SIZE = [30, 30];
 const ZOOM = 12;
 const CITY_COORDS = [52.38333, 4.9];
@@ -15,10 +16,11 @@ class Map extends PureComponent {
   }
 
   _createMap() {
-    const {coords} = this.props;
+    const {coords, activeCoords} = this.props;
     const mapElement = this._mapRef.current;
 
     const icon = Leaflet.icon({iconUrl: ICON_PATH, iconSize: ICON_SIZE});
+    const activeIcon = Leaflet.icon({iconUrl: ACTIVE_ICON_PATH, iconSize: ICON_SIZE});
     const map = Leaflet.map(mapElement).setView(CITY_COORDS, ZOOM);
     Leaflet.tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png`, {
       attribution: `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`
@@ -26,6 +28,10 @@ class Map extends PureComponent {
     .addTo(map);
 
     coords.forEach((it) => Leaflet.marker(it, {icon}).addTo(map));
+
+    if (activeCoords) {
+      Leaflet.marker(activeCoords, {icon: activeIcon}).addTo(map);
+    }
 
     this.map = map;
   }
@@ -53,6 +59,7 @@ class Map extends PureComponent {
 }
 
 Map.propTypes = {
+  activeCoords: PropTypes.arrayOf(PropTypes.number),
   coords: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired,
   className: PropTypes.string.isRequired
 };

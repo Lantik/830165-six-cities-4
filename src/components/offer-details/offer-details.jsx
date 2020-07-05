@@ -19,7 +19,8 @@ const OfferDetails = ({offer, offers, onOfferHeaderClick}) => {
     maxGuestsNumber,
     conveniences,
     owner,
-    reviews
+    reviews,
+    coordinates: offerCoords
   } = offer;
 
   const ratingPercentage = calculateRatingPercentage(rating);
@@ -179,7 +180,7 @@ const OfferDetails = ({offer, offers, onOfferHeaderClick}) => {
             </section>
           </div>
         </div>
-        <Map className={`property__map`} coords={nearByOffersCoordinates} />
+        <Map className={`property__map`} coords={nearByOffersCoordinates} activeCoords={offerCoords}/>
       </section>
       <div className="container">
         <section className="near-places places">
@@ -209,7 +210,9 @@ const offerShape = {
     avatar: PropTypes.string.isRequired,
     isSuper: PropTypes.bool.isRequired
   }).isRequired,
-  nearByOffers: PropTypes.arrayOf(PropTypes.number).isRequired};
+  nearByOffers: PropTypes.arrayOf(PropTypes.number).isRequired,
+  coordinates: PropTypes.arrayOf(PropTypes.number).isRequired
+};
 
 OfferDetails.propTypes = {
   onOfferHeaderClick: PropTypes.func.isRequired,

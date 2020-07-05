@@ -9,15 +9,15 @@ const mock = {
     {
       id: 0,
       date: Date.UTC(2009, 2, 13)
-    }, 
+    },
     {
       id: 1,
       date: Date.UTC(2009, 2, 14)
-    }, 
+    },
     {
       id: 2,
       date: Date.UTC(2009, 2, 15)
-    }, 
+    },
     {
       id: 3,
       date: Date.UTC(2009, 2, 16)
