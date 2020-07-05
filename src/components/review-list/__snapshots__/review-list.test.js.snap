@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ReviewList /> rendered correctly 1`] = `
+exports[`<ReviewList /> renders only first 10 reviews with sort from new to old 1`] = `
 <ul
   className="reviews__list"
 >
@@ -10,7 +10,8 @@ exports[`<ReviewList /> rendered correctly 1`] = `
     <Review
       review={
         Object {
-          "id": 0,
+          "date": 1237680000000,
+          "id": 9,
         }
       }
     />
@@ -21,39 +22,7 @@ exports[`<ReviewList /> rendered correctly 1`] = `
     <Review
       review={
         Object {
-          "id": 1,
-        }
-      }
-    />
-  </li>
-  <li
-    className="reviews__item"
-  >
-    <Review
-      review={
-        Object {
-          "id": 2,
-        }
-      }
-    />
-  </li>
-  <li
-    className="reviews__item"
-  >
-    <Review
-      review={
-        Object {
-          "id": 3,
-        }
-      }
-    />
-  </li>
-  <li
-    className="reviews__item"
-  >
-    <Review
-      review={
-        Object {
+          "date": 1237248000000,
           "id": 4,
         }
       }
@@ -65,7 +34,8 @@ exports[`<ReviewList /> rendered correctly 1`] = `
     <Review
       review={
         Object {
-          "id": 5,
+          "date": 1237161600000,
+          "id": 3,
         }
       }
     />
@@ -76,7 +46,8 @@ exports[`<ReviewList /> rendered correctly 1`] = `
     <Review
       review={
         Object {
-          "id": 6,
+          "date": 1237075200000,
+          "id": 2,
         }
       }
     />
@@ -87,17 +58,7 @@ exports[`<ReviewList /> rendered correctly 1`] = `
     <Review
       review={
         Object {
-          "id": 7,
-        }
-      }
-    />
-  </li>
-  <li
-    className="reviews__item"
-  >
-    <Review
-      review={
-        Object {
+          "date": 1237075200000,
           "id": 8,
         }
       }
@@ -109,7 +70,56 @@ exports[`<ReviewList /> rendered correctly 1`] = `
     <Review
       review={
         Object {
-          "id": 9,
+          "date": 1236988800000,
+          "id": 1,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "date": 1236902400000,
+          "id": 0,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "date": 1236902400000,
+          "id": 7,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "date": 1236816000000,
+          "id": 5,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "date": 1236384000000,
+          "id": 6,
         }
       }
     />

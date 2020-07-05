@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import Review from '../review/review.jsx';
 
 const ReviewList = ({reviews}) => {
-  const reviewsToShow = reviews.slice(0, 10);
+  const reviewsToShow = reviews
+    .slice(0, 10)
+    .sort((a, b) => b.date - a.date);
 
   return (
     <ul className="reviews__list">
