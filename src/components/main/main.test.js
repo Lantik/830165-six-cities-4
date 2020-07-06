@@ -18,11 +18,11 @@ const mock = {
     }]
 };
 
-it(`<Main/> rendered correctly`, () => {
+it(`<Main/> rendered correctly with offers in active city`, () => {
   const {offers} = mock;
   const renderer = new ShallowRenderer();
 
-  renderer.render(<Main 
+  renderer.render(<Main
     offers={offers}
     activeCity={`Amsterdam`}
     onOfferHeaderClick={() => {}}
@@ -32,3 +32,19 @@ it(`<Main/> rendered correctly`, () => {
 
   expect(tree).toMatchSnapshot();
 });
+
+it(`<Main /> rendered correcyly without offers in active city`, () => {
+  const {offers} = mock;
+  const renderer = new ShallowRenderer();
+
+  renderer.render(<Main
+    offers={offers}
+    activeCity={`London`}
+    onOfferHeaderClick={() => {}}
+    onCityTitleClick={() => {}}
+  />);
+  const tree = renderer.getRenderOutput();
+
+  expect(tree).toMatchSnapshot();
+});
+
