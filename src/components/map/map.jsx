@@ -6,7 +6,6 @@ const ICON_PATH = `img/pin.svg`;
 const ACTIVE_ICON_PATH = `img/pin-active.svg`;
 const ICON_SIZE = [30, 30];
 const ZOOM = 12;
-const CITY_COORDS = [52.38333, 4.9];
 
 class Map extends PureComponent {
   constructor(props) {
@@ -21,7 +20,7 @@ class Map extends PureComponent {
 
     const icon = Leaflet.icon({iconUrl: ICON_PATH, iconSize: ICON_SIZE});
     const activeIcon = Leaflet.icon({iconUrl: ACTIVE_ICON_PATH, iconSize: ICON_SIZE});
-    const map = Leaflet.map(mapElement).setView(CITY_COORDS, ZOOM);
+    const map = Leaflet.map(mapElement);
     Leaflet.tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png`, {
       attribution: `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`
     })
@@ -32,6 +31,9 @@ class Map extends PureComponent {
     if (activeCoords) {
       Leaflet.marker(activeCoords, {icon: activeIcon}).addTo(map);
     }
+
+    map.fitBounds([...coords, activeCoords])
+      .setZoom(ZOOM);
 
     this.map = map;
   }
