@@ -36,6 +36,8 @@ it(`Callback function invoked on offer mouse enter`, () => {
     offer={offer}
     onOfferHeaderClick={() => {}}
     onMouseEnter={handleCardMouseEnter}
+    articleClassName={`test-class`}
+    imageWrapperClassName={`test-class`}
   />);
 
   const card = component.find(`article`).first();
@@ -51,6 +53,8 @@ it(`Offer object passed to callback function on offer mouse enter`, () => {
     offer={offer}
     onOfferHeaderClick={() => {}}
     onMouseEnter={handleCardMouseEnter}
+    articleClassName={`test-class`}
+    imageWrapperClassName={`test-class`}
   />);
 
   const card = component.find(`article`).first();
@@ -66,6 +70,8 @@ it(`Callback function invoked on offer title click`, () => {
     offer={offer}
     onOfferHeaderClick={handleOfferHeaderClick}
     onMouseEnter={() => {}}
+    articleClassName={`test-class`}
+    imageWrapperClassName={`test-class`}
   />);
 
   const card = component.find(`.place-card__name`).first();
@@ -81,6 +87,8 @@ it(`Offer object passed to callback function on offer title click`, () => {
     offer={offer}
     onOfferHeaderClick={handleTitleClick}
     onMouseEnter={() => {}}
+    articleClassName={`test-class`}
+    imageWrapperClassName={`test-class`}
   />);
 
   const card = component.find(`.place-card__name`).first();

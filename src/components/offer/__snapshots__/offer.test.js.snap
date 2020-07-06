@@ -2,7 +2,7 @@
 
 exports[`<Offer/> rendered correctly 1`] = `
 <article
-  className="cities__place-card place-card"
+  className="test-article-class place-card"
   onMouseEnter={[Function]}
 >
   <div
@@ -13,7 +13,7 @@ exports[`<Offer/> rendered correctly 1`] = `
     </span>
   </div>
   <div
-    className="cities__image-wrapper place-card__image-wrapper"
+    className="test-image-wrapper-class place-card__image-wrapper"
   >
     <a
       href="#"

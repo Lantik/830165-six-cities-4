@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ReviewList /> renders only first 10 reviews with sort from new to old 1`] = `
+<ul
+  className="reviews__list"
+>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "date": 1237680000000,
+          "id": 9,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "date": 1237248000000,
+          "id": 4,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "date": 1237161600000,
+          "id": 3,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "date": 1237075200000,
+          "id": 2,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "date": 1237075200000,
+          "id": 8,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "date": 1236988800000,
+          "id": 1,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "date": 1236902400000,
+          "id": 0,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "date": 1236902400000,
+          "id": 7,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "date": 1236816000000,
+          "id": 5,
+        }
+      }
+    />
+  </li>
+  <li
+    className="reviews__item"
+  >
+    <Review
+      review={
+        Object {
+          "date": 1236384000000,
+          "id": 6,
+        }
+      }
+    />
+  </li>
+</ul>
+`;

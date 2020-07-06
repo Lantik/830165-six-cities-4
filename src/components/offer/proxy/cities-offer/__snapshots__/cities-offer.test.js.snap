@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CitiesOffer/> rendered correctly 1`] = `
+<Offer
+  articleClassName="cities__place-card"
+  imageWrapperClassName="cities__image-wrapper"
+  offer={Object {}}
+  onMouseEnter={[Function]}
+  onOfferHeaderClick={[Function]}
+/>
+`;

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CitiesOfferList /> rendered correctly 1`] = `
+<OfferList
+  className="cities__places-list places__list tabs__content"
+  offerComponent={[Function]}
+  offers={
+    Array [
+      Object {},
+      Object {},
+      Object {},
+    ]
+  }
+  onOfferHeaderClick={[Function]}
+/>
+`;
