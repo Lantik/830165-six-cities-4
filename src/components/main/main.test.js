@@ -5,12 +5,15 @@ import Main from './main.jsx';
 const mock = {
   offers: [
     {
+      city: `Amsterdam`,
       coordinates: [52.3809553943508, 4.939309666406198]
     },
     {
+      city: `Amsterdam`,
       coordinates: [52.3809553943508, 4.939309666406198]
     },
     {
+      city: `Capenhagen`,
       coordinates: [52.3809553943508, 4.939309666406198]
     }]
 };
@@ -19,7 +22,12 @@ it(`<Main/> rendered correctly`, () => {
   const {offers} = mock;
   const renderer = new ShallowRenderer();
 
-  renderer.render(<Main offers={offers} onOfferHeaderClick={() => {}}/>);
+  renderer.render(<Main 
+    offers={offers}
+    activeCity={`Amsterdam`}
+    onOfferHeaderClick={() => {}}
+    onCityTitleClick={() => {}}
+  />);
   const tree = renderer.getRenderOutput();
 
   expect(tree).toMatchSnapshot();

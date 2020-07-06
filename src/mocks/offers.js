@@ -205,6 +205,6 @@ export default [
         date: new Date(`2005/01/19`)
       },
     ],
-    nearByOffers: [1, 2]
+    nearByOffers: []
   }
 ];

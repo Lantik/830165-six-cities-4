@@ -8,13 +8,21 @@ exports[`<App/> rendered correctly 1`] = `
       path="/"
     >
       <Main
+        activeCity="Test city"
         offers={
           Array [
+            Object {
+              "city": "Amsterdam",
+            },
+            Object {
+              "city": "Capenhagen",
+            },
             Object {
               "city": "Test city",
             },
           ]
         }
+        onCityTitleClick={[Function]}
         onOfferHeaderClick={[Function]}
       />
     </Route>

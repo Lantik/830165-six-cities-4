@@ -34,20 +34,20 @@ class App extends PureComponent {
     const {offers, city, onCityTitleClick} = this.props;
     const {offer, screen} = this.state;
 
-    const cityOffers = offers.filter((it) => it.city === city);
-
     switch (screen) {
       case APP_SCREENS.MAIN:
         return (
           <Main
-            offers = {cityOffers}
+            offers = {offers}
+            activeCity={city}
             onOfferHeaderClick={this._handleOfferTitleClick}
+            onCityTitleClick={onCityTitleClick}
           />);
       case APP_SCREENS.OFFER_PROPERTY:
         return (
           <OfferDetails
             offer={offer}
-            offers={cityOffers}
+            offers={offers}
             onOfferHeaderClick={this._handleOfferTitleClick}/>
         );
       default :
