@@ -2,8 +2,8 @@ import {extend} from '../utils/common/common.js';
 import offers from '../mocks/offers.js';
 
 const initialState = {
-  city: offers.length > 0 && offers[0].city.name,
-  offers: offers 
+  city: offers.length > 0 && offers[0].city,
+  offers,
 };
 
 const ActionType = {
@@ -15,10 +15,11 @@ const ActionCreator = {
     type: ActionType.CHANGE_CITY,
     payload: city
   })
-}
+
+};
 
 const reducer = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case ActionType.CHANGE_CITY: {
       return extend(state, {
         city: action.payload

@@ -10,9 +10,9 @@ exports[`<App/> rendered correctly 1`] = `
       <Main
         offers={
           Array [
-            Object {},
-            Object {},
-            Object {},
+            Object {
+              "city": "Test city",
+            },
           ]
         }
         onOfferHeaderClick={[Function]}
@@ -23,12 +23,22 @@ exports[`<App/> rendered correctly 1`] = `
       path="/offer"
     >
       <OfferDetails
-        offer={Object {}}
+        offer={
+          Object {
+            "city": "Amsterdam",
+          }
+        }
         offers={
           Array [
-            Object {},
-            Object {},
-            Object {},
+            Object {
+              "city": "Amsterdam",
+            },
+            Object {
+              "city": "Capenhagen",
+            },
+            Object {
+              "city": "Test city",
+            },
           ]
         }
         onOfferHeaderClick={[Function]}

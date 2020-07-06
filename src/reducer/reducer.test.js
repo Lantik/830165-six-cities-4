@@ -15,7 +15,7 @@ describe(`Reducer`, () => {
       payload: `Copenhagen`
     });
 
-    const expectedResult = {city: `Copenhagen`}
+    const expectedResult = {city: `Copenhagen`};
     expect(result).toEqual(expectedResult);
   });
 });
@@ -26,7 +26,7 @@ describe(`Action Creator`, () => {
 
     const result = reducer(state, ActionCreator.changeCity(`Amsterdam`));
 
-    const expectedResult = {city:`Amsterdam`};
+    const expectedResult = {city: `Amsterdam`};
     expect(result).toEqual(expectedResult);
-  })
+  });
 });

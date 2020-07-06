@@ -1,8 +1,10 @@
 import React, {PureComponent} from 'react';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import Main from '../main/main.jsx';
 import OfferDetails from '../offer-details/offer-details.jsx';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {ActionCreator} from '../../reducer/reducer.js';
 
 const APP_SCREENS = {
   MAIN: `Offer List`,
@@ -29,21 +31,23 @@ class App extends PureComponent {
   }
 
   _renderAccomodationScreen() {
-    const {offers} = this.props;
+    const {offers, city, onCityTitleClick} = this.props;
     const {offer, screen} = this.state;
+
+    const cityOffers = offers.filter((it) => it.city === city);
 
     switch (screen) {
       case APP_SCREENS.MAIN:
         return (
           <Main
-            offers = {offers}
+            offers = {cityOffers}
             onOfferHeaderClick={this._handleOfferTitleClick}
           />);
       case APP_SCREENS.OFFER_PROPERTY:
         return (
           <OfferDetails
             offer={offer}
-            offers={offers}
+            offers={cityOffers}
             onOfferHeaderClick={this._handleOfferTitleClick}/>
         );
       default :
@@ -73,7 +77,21 @@ class App extends PureComponent {
 }
 
 App.propTypes = {
-  offers: PropTypes.array.isRequired
+  offers: PropTypes.array.isRequired,
+  city: PropTypes.string.isRequired,
+  onCityTitleClick: PropTypes.func.isRequired
 };
 
-export default App;
+const mapStateToProps = (state) => ({
+  offers: state.offers,
+  city: state.city
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  onCityTitleClick(city) {
+    dispatch(ActionCreator.changeCity(city));
+  },
+});
+
+export {App};
+export default connect(mapStateToProps, mapDispatchToProps)(App);
