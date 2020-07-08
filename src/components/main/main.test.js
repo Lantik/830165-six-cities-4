@@ -30,6 +30,7 @@ it(`<Main/> rendered correctly with offers in active city`, () => {
     onCityTitleClick={() => {}}
     onSortOptionClick={() => {}}
     sortType={SortType.DEFAULT}
+    onOfferCardMouseEnter={() => {}}
   />);
   const tree = renderer.getRenderOutput();
 
@@ -47,6 +48,7 @@ it(`<Main /> rendered correcyly without offers in active city`, () => {
     onCityTitleClick={() => {}}
     onSortOptionClick={() => {}}
     sortType={SortType.DEFAULT}
+    onOfferCardMouseEnter={() => {}}
   />);
   const tree = renderer.getRenderOutput();
 

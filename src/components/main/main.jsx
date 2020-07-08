@@ -19,13 +19,25 @@ const getSortFunction = (sortType) => {
   }
 };
 
-const Main = ({offers, onOfferHeaderClick, onCityTitleClick, activeCity, onSortOptionClick, sortType}) => {
+const Main = (props) => {
+  const {
+    offers,
+    onOfferHeaderClick,
+    onCityTitleClick,
+    activeCity,
+    onSortOptionClick,
+    sortType,
+    onOfferCardMouseEnter,
+    offer
+  } = props;
+
   const cityOffers = offers.filter((it) => it.city === activeCity)
     .sort(getSortFunction(sortType));
   const offersCoords = cityOffers.map((it) => it.coordinates);
   const cities = offers.map((it) => it.city)
     .filter((it, i, self) => self.indexOf(it) === i);
   const mainEmptyClass = cityOffers.length === 0 ? `page__main--index-empty` : ``;
+  const activeOfferCoords = offer && offer.coordinates;
 
   return (<div className="page page--gray page--main">
     <header className="header">
@@ -84,10 +96,11 @@ const Main = ({offers, onOfferHeaderClick, onCityTitleClick, activeCity, onSortO
                 <CitiesOfferList
                   offers={cityOffers}
                   onOfferHeaderClick={onOfferHeaderClick}
+                  onOfferCardMouseEnter={onOfferCardMouseEnter}
                 />
               </section>
               <div className="cities__right-section">
-                <Map className={`cities__map`} coords={offersCoords} />
+                <Map className={`cities__map`} coords={offersCoords} activeCoords={activeOfferCoords}/>
               </div>
             </div>
           )}
@@ -102,7 +115,11 @@ Main.propTypes = {
   onCityTitleClick: PropTypes.func.isRequired,
   activeCity: PropTypes.string.isRequired,
   onSortOptionClick: PropTypes.func.isRequired,
-  sortType: PropTypes.string.isRequired
+  sortType: PropTypes.string.isRequired,
+  onOfferCardMouseEnter: PropTypes.func.isRequired,
+  offer: PropTypes.shape({
+    coordinates: PropTypes.arrayOf(PropTypes.number).isRequired
+  })
 };
 
 export default Main;

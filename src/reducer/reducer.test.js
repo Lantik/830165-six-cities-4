@@ -30,6 +30,19 @@ describe(`Reducer`, () => {
     const expectedResult = {sortType: `By Name`};
     expect(result).toEqual(expectedResult);
   });
+
+  it(`Reducer changes active offer`, () => {
+    const state = {offer: {id: 1}};
+    const newOffer = {id: 2};
+
+    const result = reducer(state, {
+      type: ActionType.CHANGE_OFFER,
+      payload: newOffer
+    });
+
+    const expectedResult = {offer: newOffer};
+    expect(result).toEqual(expectedResult);
+  });
 });
 
 describe(`Action Creator`, () => {
@@ -48,6 +61,16 @@ describe(`Action Creator`, () => {
     const result = reducer(state, ActionCreator.changeSortType(`By Name`));
 
     const expectedResult = {sortType: `By Name`};
+    expect(result).toEqual(expectedResult);
+  });
+
+  it(`Action Creator changes active offer`, () => {
+    const state = {offer: {id: 1}};
+    const newOffer = {id: 2};
+
+    const result = reducer(state, ActionCreator.changeActiveOffer(newOffer));
+
+    const expectedResult = {offer: newOffer};
     expect(result).toEqual(expectedResult);
   });
 });

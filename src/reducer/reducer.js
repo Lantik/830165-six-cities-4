@@ -5,12 +5,13 @@ import {SortType} from '../const/application.js';
 const initialState = {
   city: offers[0].city,
   offers,
-  sortType: SortType.DEFAULT
+  sortType: SortType.DEFAULT,
 };
 
 const ActionType = {
   CHANGE_CITY: `CHANGE_CITY`,
-  CHANGE_SORT_TYPE: `CHANGE_SORT_TYPE`
+  CHANGE_SORT_TYPE: `CHANGE_SORT_TYPE`,
+  CHANGE_OFFER: `CHANGE_OFFER`
 };
 
 const ActionCreator = {
@@ -21,6 +22,10 @@ const ActionCreator = {
   changeSortType: (sortType) => ({
     type: ActionType.CHANGE_SORT_TYPE,
     payload: sortType
+  }),
+  changeActiveOffer: (offer) => ({
+    type: ActionType.CHANGE_OFFER,
+    payload: offer
   })
 };
 
@@ -34,6 +39,11 @@ const reducer = (state = initialState, action) => {
     case ActionType.CHANGE_SORT_TYPE: {
       return extend(state, {
         sortType: action.payload
+      });
+    }
+    case ActionType.CHANGE_OFFER: {
+      return extend(state, {
+        offer: action.payload
       });
     }
   }

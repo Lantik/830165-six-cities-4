@@ -242,6 +242,7 @@ exports[`<Main/> rendered correctly with offers in active city 1`] = `
                 },
               ]
             }
+            onOfferCardMouseEnter={[Function]}
             onOfferHeaderClick={[Function]}
           />
         </section>

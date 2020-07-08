@@ -186,7 +186,7 @@ const OfferDetails = ({offer, offers, onOfferHeaderClick}) => {
       <div className="container">
         <section className="near-places places">
           <h2 className="near-places__title">Other places in the neighbourhood</h2>
-          <NearByOfferList offers={nearByOffers} onOfferHeaderClick={onOfferHeaderClick} />
+          <NearByOfferList offers={nearByOffers} onOfferHeaderClick={onOfferHeaderClick} onOfferCardMouseEnter={() => {}}/>
         </section>
       </div>
     </main>

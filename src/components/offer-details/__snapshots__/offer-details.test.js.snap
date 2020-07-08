@@ -690,6 +690,7 @@ exports[`<OfferDetails/> component rendered correctly 1`] = `
               },
             ]
           }
+          onOfferCardMouseEnter={[Function]}
           onOfferHeaderClick={[Function]}
         />
       </section>
