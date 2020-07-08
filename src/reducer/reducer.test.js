@@ -1,8 +1,8 @@
 import {reducer, ActionType, ActionCreator} from './reducer.js';
 
 describe(`Reducer`, () => {
-  it(`Reducer returns initial state if state parameter is not provided`, () => {
-    const result = reducer(void 0, {});
+  it(`Reducer has default state`, () => {
+    const result = reducer(undefined, {});
 
     expect(result).toBeDefined();
   });

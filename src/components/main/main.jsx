@@ -7,11 +7,10 @@ import Map from '../map/map.jsx';
 
 const Main = ({offers, onOfferHeaderClick, onCityTitleClick, activeCity}) => {
   const cityOffers = offers.filter((it) => it.city === activeCity);
-  const offersCount = cityOffers.length;
   const offersCoords = cityOffers.map((it) => it.coordinates);
   const cities = offers.map((it) => it.city)
     .filter((it, i, self) => self.indexOf(it) === i);
-  const mainEmptyClass = offersCount === 0 ? `page__main--index-empty` : ``;
+  const mainEmptyClass = cityOffers.length === 0 ? `page__main--index-empty` : ``;
 
   return (<div className="page page--gray page--main">
     <header className="header">
@@ -49,7 +48,7 @@ const Main = ({offers, onOfferHeaderClick, onCityTitleClick, activeCity}) => {
         </section>
       </div>
       <div className="cities">
-        {offersCount === 0
+        {cityOffers.length === 0
           ? (
             <div className="cities__places-container cities__places-container--empty container">
               <section className="cities__no-places">
@@ -65,7 +64,7 @@ const Main = ({offers, onOfferHeaderClick, onCityTitleClick, activeCity}) => {
             <div className="cities__places-container container">
               <section className="cities__places places">
                 <h2 className="visually-hidden">Places</h2>
-                <b className="places__found">{offersCount} places to stay in {activeCity}</b>
+                <b className="places__found">{cityOffers.length} places to stay in {activeCity}</b>
                 <form className="places__sorting" action="#" method="get">
                   <span className="places__sorting-caption">Sort by</span>
                   <span className="places__sorting-type" tabIndex="0">

@@ -2,7 +2,7 @@ import {extend} from '../utils/common/common.js';
 import offers from '../mocks/offers.js';
 
 const initialState = {
-  city: offers.length > 0 && offers[0].city,
+  city: offers[0].city,
   offers,
 };
 
