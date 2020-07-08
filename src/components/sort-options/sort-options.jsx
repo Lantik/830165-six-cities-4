@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import {SortType} from '../../const/application.js';
 
-const SortOptions = () => {
+const SORT_TYPE_TO_SORT_TEXT = {
+  [SortType.DEFAULT]: `Popular`,
+  [SortType.PRICE_LOW_TO_HIGH]: `Price: low to high`,
+  [SortType.PRICE_HIGH_TO_LOW]: `Price: high to low`,
+  [SortType.RATE_HIGHT_TO_LOW]: `Top rated first`
+};
+
+const SortOptions = ({onSortOptionClick, sortType}) => {
+  const sortTypes = Object.keys(SORT_TYPE_TO_SORT_TEXT);
+
   return (
     <form className="places__sorting" action="#" method="get">
       <span className="places__sorting-caption">Sort by</span>
@@ -11,13 +22,23 @@ const SortOptions = () => {
         </svg>
       </span>
       <ul className="places__options places__options--custom places__options--opened">
-        <li className="places__option places__option--active" tabindex="0">Popular</li>
-        <li className="places__option" tabindex="0">Price: low to high</li>
-        <li className="places__option" tabindex="0">Price: high to low</li>
-        <li className="places__option" tabindex="0">Top rated first</li>
+        {sortTypes.map(x => (
+          <li className={`places__option ${x == sortType ? `places__option--active` : ``}`} 
+              tabindex="0"
+              onClick={() => onSortOptionClick(x)}
+              key={x}
+          >
+            {SORT_TYPE_TO_SORT_TEXT[x]}
+          </li>
+        ))}
       </ul>
     </form>
   )
+}
+
+SortOptions.propTypes = {
+  onSortOptionClick: PropTypes.func.isRequired,
+  sortType: PropTypes.oneOf(Object.values(SortType))
 };
 
 export default SortOptions;
