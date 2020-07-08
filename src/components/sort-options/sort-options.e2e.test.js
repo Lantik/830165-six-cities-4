@@ -6,15 +6,15 @@ import {SortType} from '../../const/application.js';
 
 Enzyme.configure({
   adapter: new Adapter()
-}); 
+});
 
 it(`Sort options invokes callback function on sort option click`, () => {
   const handleSortOptionClick = jest.fn();
-  
+
   const component = shallow(<SortOptions
-      sortType={SortType.DEFAULT}
-      onSortOptionClick={handleSortOptionClick}
-    />)
+    sortType={SortType.DEFAULT}
+    onSortOptionClick={handleSortOptionClick}
+  />);
   const sortOption = component.find(`.places__option`).first();
   sortOption.simulate(`click`);
 
@@ -24,11 +24,11 @@ it(`Sort options invokes callback function on sort option click`, () => {
 it(`Sort options passes sort type to callback function on sort option click`, () => {
   const handleSortOptionClick = jest.fn();
   const sortTypes = Object.values(SortType);
-  
+
   const component = shallow(<SortOptions
-      sortType={SortType.DEFAULT}
-      onSortOptionClick={handleSortOptionClick}
-    />)
+    sortType={SortType.DEFAULT}
+    onSortOptionClick={handleSortOptionClick}
+  />);
   const sortOption = component.find(`.places__option`).first();
   sortOption.simulate(`click`);
 

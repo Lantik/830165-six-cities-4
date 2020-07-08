@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {SortType} from '../../const/application.js';
 
@@ -15,26 +15,26 @@ const SortOptions = ({onSortOptionClick, sortType}) => {
   return (
     <form className="places__sorting" action="#" method="get">
       <span className="places__sorting-caption">Sort by</span>
-      <span className="places__sorting-type" tabindex="0">
+      <span className="places__sorting-type" tabIndex="0">
         Popular
         <svg className="places__sorting-arrow" width="7" height="4">
           <use xlinkHref="#icon-arrow-select"></use>
         </svg>
       </span>
       <ul className="places__options places__options--custom places__options--opened">
-        {sortTypes.map(x => (
-          <li className={`places__option ${x == sortType ? `places__option--active` : ``}`} 
-              tabindex="0"
-              onClick={() => onSortOptionClick(x)}
-              key={x}
+        {sortTypes.map((x) => (
+          <li className={`places__option ${x === sortType ? `places__option--active` : ``}`}
+            tabIndex="0"
+            onClick={() => onSortOptionClick(x)}
+            key={x}
           >
             {SORT_TYPE_TO_SORT_TEXT[x]}
           </li>
         ))}
       </ul>
     </form>
-  )
-}
+  );
+};
 
 SortOptions.propTypes = {
   onSortOptionClick: PropTypes.func.isRequired,

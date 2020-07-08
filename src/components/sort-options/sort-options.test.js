@@ -5,7 +5,7 @@ import {SortType} from '../../const/application.js';
 
 it(`<SortOptions/> rendered correctly`, () => {
   const tree = renderer
-    .create(<SortOptions 
+    .create(<SortOptions
       sortType={SortType.DEFAULT}
       onSortOptionClick={() => {}}
     />)

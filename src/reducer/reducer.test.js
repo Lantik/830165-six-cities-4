@@ -18,6 +18,18 @@ describe(`Reducer`, () => {
     const expectedResult = {city: `Copenhagen`};
     expect(result).toEqual(expectedResult);
   });
+
+  it(`Reducer changes sortType`, () => {
+    const state = {sortType: `By Id`};
+
+    const result = reducer(state, {
+      type: ActionType.CHANGE_SORT_TYPE,
+      payload: `By Name`
+    });
+
+    const expectedResult = {sortType: `By Name`};
+    expect(result).toEqual(expectedResult);
+  });
 });
 
 describe(`Action Creator`, () => {
@@ -27,6 +39,15 @@ describe(`Action Creator`, () => {
     const result = reducer(state, ActionCreator.changeCity(`Amsterdam`));
 
     const expectedResult = {city: `Amsterdam`};
+    expect(result).toEqual(expectedResult);
+  });
+
+  it(`Action Creator changes sortType`, () => {
+    const state = {sortType: `By Id`};
+
+    const result = reducer(state, ActionCreator.changeSortType(`By Name`));
+
+    const expectedResult = {sortType: `By Name`};
     expect(result).toEqual(expectedResult);
   });
 });

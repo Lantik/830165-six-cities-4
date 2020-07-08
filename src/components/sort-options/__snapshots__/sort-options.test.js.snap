@@ -13,7 +13,7 @@ exports[`<SortOptions/> rendered correctly 1`] = `
   </span>
   <span
     className="places__sorting-type"
-    tabindex="0"
+    tabIndex="0"
   >
     Popular
     <svg
@@ -32,28 +32,28 @@ exports[`<SortOptions/> rendered correctly 1`] = `
     <li
       className="places__option places__option--active"
       onClick={[Function]}
-      tabindex="0"
+      tabIndex="0"
     >
       Popular
     </li>
     <li
       className="places__option "
       onClick={[Function]}
-      tabindex="0"
+      tabIndex="0"
     >
       Price: low to high
     </li>
     <li
       className="places__option "
       onClick={[Function]}
-      tabindex="0"
+      tabIndex="0"
     >
       Price: high to low
     </li>
     <li
       className="places__option "
       onClick={[Function]}
-      tabindex="0"
+      tabIndex="0"
     >
       Top rated first
     </li>

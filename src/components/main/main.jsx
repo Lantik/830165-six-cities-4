@@ -4,10 +4,24 @@ import CitiesOfferList from '../offer-list/proxy/cities-offer-list/cities-offer-
 import CityList from '../city-list/city-list.jsx';
 import SortOptions from '../sort-options/sort-options.jsx';
 import Map from '../map/map.jsx';
+import {SortType} from '../../const/application.js';
 
+const getSortFunction = (sortType) => {
+  switch (sortType) {
+    case SortType.PRICE_LOW_TO_HIGH:
+      return (a, b) => a.price - b.price;
+    case SortType.PRICE_HIGH_TO_LOW:
+      return (a, b) => b.price - a.price;
+    case SortType.RATE_HIGHT_TO_LOW:
+      return (a, b) => a.rating - b.rating;
+    default:
+      return undefined;
+  }
+};
 
-const Main = ({offers, onOfferHeaderClick, onCityTitleClick, activeCity}) => {
-  const cityOffers = offers.filter((it) => it.city === activeCity);
+const Main = ({offers, onOfferHeaderClick, onCityTitleClick, activeCity, onSortOptionClick, sortType}) => {
+  const cityOffers = offers.filter((it) => it.city === activeCity)
+    .sort(getSortFunction(sortType));
   const offersCoords = cityOffers.map((it) => it.coordinates);
   const cities = offers.map((it) => it.city)
     .filter((it, i, self) => self.indexOf(it) === i);
@@ -66,7 +80,7 @@ const Main = ({offers, onOfferHeaderClick, onCityTitleClick, activeCity}) => {
               <section className="cities__places places">
                 <h2 className="visually-hidden">Places</h2>
                 <b className="places__found">{cityOffers.length} places to stay in {activeCity}</b>
-                <SortOptions />
+                <SortOptions onSortOptionClick={onSortOptionClick} sortType={sortType}/>
                 <CitiesOfferList
                   offers={cityOffers}
                   onOfferHeaderClick={onOfferHeaderClick}
@@ -86,7 +100,9 @@ Main.propTypes = {
   offers: PropTypes.array.isRequired,
   onOfferHeaderClick: PropTypes.func.isRequired,
   onCityTitleClick: PropTypes.func.isRequired,
-  activeCity: PropTypes.string.isRequired
+  activeCity: PropTypes.string.isRequired,
+  onSortOptionClick: PropTypes.func.isRequired,
+  sortType: PropTypes.string.isRequired
 };
 
 export default Main;

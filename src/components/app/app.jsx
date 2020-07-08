@@ -31,7 +31,7 @@ class App extends PureComponent {
   }
 
   _renderAccomodationScreen() {
-    const {offers, city, onCityTitleClick} = this.props;
+    const {offers, city, onCityTitleClick, onSortOptionClick, sortType} = this.props;
     const {offer, screen} = this.state;
 
     switch (screen) {
@@ -42,6 +42,8 @@ class App extends PureComponent {
             activeCity={city}
             onOfferHeaderClick={this._handleOfferTitleClick}
             onCityTitleClick={onCityTitleClick}
+            sortType={sortType}
+            onSortOptionClick={onSortOptionClick}
           />);
       case APP_SCREENS.OFFER_PROPERTY:
         return (
@@ -79,18 +81,24 @@ class App extends PureComponent {
 App.propTypes = {
   offers: PropTypes.array.isRequired,
   city: PropTypes.string.isRequired,
-  onCityTitleClick: PropTypes.func.isRequired
+  onCityTitleClick: PropTypes.func.isRequired,
+  onSortOptionClick: PropTypes.func.isRequired,
+  sortType: PropTypes.string.isRequired
 };
 
 const mapStateToProps = (state) => ({
   offers: state.offers,
-  city: state.city
+  city: state.city,
+  sortType: state.sortType
 });
 
 const mapDispatchToProps = (dispatch) => ({
   onCityTitleClick(city) {
     dispatch(ActionCreator.changeCity(city));
   },
+  onSortOptionClick(sortType) {
+    dispatch(ActionCreator.changeSortType(sortType));
+  }
 });
 
 export {App};

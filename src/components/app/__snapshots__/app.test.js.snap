@@ -24,6 +24,8 @@ exports[`<App/> rendered correctly 1`] = `
         }
         onCityTitleClick={[Function]}
         onOfferHeaderClick={[Function]}
+        onSortOptionClick={[Function]}
+        sortType=""
       />
     </Route>
     <Route
