@@ -26,6 +26,7 @@ const OfferDetails = ({offer, offers, onOfferHeaderClick}) => {
   const ratingPercentage = calculateRatingPercentage(rating);
   const accomodationType = ACCOMODATION_TYPES[type];
   const offerLimitedPhotos = photos.slice(0, 6);
+
   const nearByOffers = offers.filter((it) => offer.nearByOffers.includes(it.id));
   const nearByOffersCoordinates = nearByOffers.map((it) => it.coordinates);
   const reviewAmount = reviews.length;

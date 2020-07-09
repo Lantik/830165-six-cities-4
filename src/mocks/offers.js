@@ -13,6 +13,7 @@ export default [
     maxGuestsNumber: 3,
     conveniences: [`Wifi`, `Heating`, `Kitchen`, `Cable TV`],
     coordinates: [52.3909553943508, 4.85309666406198],
+    city: `Amsterdam`,
     owner: {
       name: `Angelina`,
       avatar: `img/avatar-angelina.jpg`,
@@ -51,6 +52,7 @@ export default [
     bedroomsCount: 2,
     maxGuestsNumber: 2,
     coordinates: [52.369553943508, 4.85309666406198],
+    city: `Amsterdam`,
     conveniences: [`Wifi`, `Heating`, `Kitchen`, `Cable TV`],
     owner: {
       name: `Angelina`,
@@ -82,6 +84,7 @@ export default [
     bedroomsCount: 3,
     maxGuestsNumber: 1,
     coordinates: [52.3909553943508, 4.929309666406198],
+    city: `Amsterdam`,
     conveniences: [`Wifi`, `Kitchen`, `Cable TV`],
     owner: {
       name: `Mike`,
@@ -121,6 +124,7 @@ export default [
     bedroomsCount: 4,
     maxGuestsNumber: 5,
     coordinates: [52.3809553943508, 4.939309666406198],
+    city: `Amsterdam`,
     conveniences: [`Kitchen`, `Cable TV`],
     owner: {
       name: `John`,
@@ -154,5 +158,53 @@ export default [
       },
     ],
     nearByOffers: [1, 2]
+  },
+  {
+    id: 5,
+    price: 10,
+    rating: 4.1,
+    name: `Luxurious & Beautiful apartment at great location in Copenhagen`,
+    type: `house`,
+    inBookmarks: false,
+    description: `Reprehenderit anim elit cillum officia ut proident dolore ea. Duis laborum elit aliqua reprehenderit ipsum exercitation consequat dolore incididunt. Do adipisicing deserunt do enim id proident velit enim minim in sit labore cupidatat. Nulla cupidatat excepteur id Lorem magna. Voluptate mollit dolor in nostrud qui elit laboris labore.`,
+    photos: [`img/apartment-small-03.jpg`, `img/apartment-small-03.jpg`, `img/apartment-small-03.jpg`],
+    isPremium: true,
+    bedroomsCount: 4,
+    maxGuestsNumber: 5,
+    coordinates: [55.676098, 12.568337],
+    city: `Copenhagen`,
+    conveniences: [`Kitchen`, `Cable TV`],
+    owner: {
+      name: `John`,
+      avatar: `img/avatar-angelina.jpg`,
+      isSuper: false
+    },
+    reviews: [
+      {
+        id: 5,
+        userName: `Helen`,
+        avatar: `img/avatar.svg`,
+        rating: 99,
+        text: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
+        date: new Date(`2009/04/19`)
+      },
+      {
+        id: 6,
+        userName: `Max`,
+        avatar: `img/avatar-max.jpg`,
+        rating: 70,
+        text: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
+        date: new Date(`2011/11/23`)
+      },
+      {
+        id: 7,
+        userName: `Vlad`,
+        avatar: `img/avatar-angelina.jpg`,
+        rating: 10,
+        text: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
+        date: new Date(`2005/01/19`)
+      },
+    ],
+    nearByOffers: []
   }
 ];

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Main/> rendered correctly 1`] = `
+exports[`<Main /> rendered correcyly without offers in active city 1`] = `
 <div
   className="page page--gray page--main"
 >
@@ -57,7 +57,7 @@ exports[`<Main/> rendered correctly 1`] = `
     </div>
   </header>
   <main
-    className="page__main page__main--index"
+    className="page__main page__main--index page__main--index-empty"
   >
     <h1
       className="visually-hidden"
@@ -70,81 +70,132 @@ exports[`<Main/> rendered correctly 1`] = `
       <section
         className="locations container"
       >
-        <ul
-          className="locations__list tabs__list"
+        <CityList
+          activeCity="London"
+          cities={
+            Array [
+              "Amsterdam",
+              "Capenhagen",
+            ]
+          }
+          onCityTitleClick={[Function]}
+        />
+      </section>
+    </div>
+    <div
+      className="cities"
+    >
+      <div
+        className="cities__places-container cities__places-container--empty container"
+      >
+        <section
+          className="cities__no-places"
         >
-          <li
-            className="locations__item"
+          <div
+            className="cities__status-wrapper tabs__content"
           >
-            <a
-              className="locations__item-link tabs__item"
-              href="#"
+            <b
+              className="cities__status"
             >
-              <span>
-                Paris
-              </span>
-            </a>
-          </li>
-          <li
-            className="locations__item"
+              No places to stay available
+            </b>
+            <p
+              className="cities__status-description"
+            >
+              We could not find any property availbale at the moment in 
+              London
+            </p>
+          </div>
+        </section>
+        <div
+          className="cities__right-section"
+        />
+      </div>
+    </div>
+  </main>
+</div>
+`;
+
+exports[`<Main/> rendered correctly with offers in active city 1`] = `
+<div
+  className="page page--gray page--main"
+>
+  <header
+    className="header"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="header__wrapper"
+      >
+        <div
+          className="header__left"
+        >
+          <a
+            className="header__logo-link header__logo-link--active"
           >
-            <a
-              className="locations__item-link tabs__item"
-              href="#"
-            >
-              <span>
-                Cologne
-              </span>
-            </a>
-          </li>
-          <li
-            className="locations__item"
+            <img
+              alt="6 cities logo"
+              className="header__logo"
+              height="41"
+              src="img/logo.svg"
+              width="81"
+            />
+          </a>
+        </div>
+        <nav
+          className="header__nav"
+        >
+          <ul
+            className="header__nav-list"
           >
-            <a
-              className="locations__item-link tabs__item"
-              href="#"
+            <li
+              className="header__nav-item user"
             >
-              <span>
-                Brussels
-              </span>
-            </a>
-          </li>
-          <li
-            className="locations__item"
-          >
-            <a
-              className="locations__item-link tabs__item tabs__item--active"
-            >
-              <span>
-                Amsterdam
-              </span>
-            </a>
-          </li>
-          <li
-            className="locations__item"
-          >
-            <a
-              className="locations__item-link tabs__item"
-              href="#"
-            >
-              <span>
-                Hamburg
-              </span>
-            </a>
-          </li>
-          <li
-            className="locations__item"
-          >
-            <a
-              className="locations__item-link tabs__item"
-              href="#"
-            >
-              <span>
-                Dusseldorf
-              </span>
-            </a>
-          </li>
-        </ul>
+              <a
+                className="header__nav-link header__nav-link--profile"
+                href="#"
+              >
+                <div
+                  className="header__avatar-wrapper user__avatar-wrapper"
+                />
+                <span
+                  className="header__user-name user__name"
+                >
+                  Oliver.conner@gmail.com
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main
+    className="page__main page__main--index "
+  >
+    <h1
+      className="visually-hidden"
+    >
+      Cities
+    </h1>
+    <div
+      className="tabs"
+    >
+      <section
+        className="locations container"
+      >
+        <CityList
+          activeCity="Amsterdam"
+          cities={
+            Array [
+              "Amsterdam",
+              "Capenhagen",
+            ]
+          }
+          onCityTitleClick={[Function]}
+        />
       </section>
     </div>
     <div
@@ -164,8 +215,9 @@ exports[`<Main/> rendered correctly 1`] = `
           <b
             className="places__found"
           >
-            3
-             places to stay in Amsterdam
+            2
+             places to stay in 
+            Amsterdam
           </b>
           <form
             action="#"
@@ -225,18 +277,14 @@ exports[`<Main/> rendered correctly 1`] = `
             offers={
               Array [
                 Object {
+                  "city": "Amsterdam",
                   "coordinates": Array [
                     52.3809553943508,
                     4.939309666406198,
                   ],
                 },
                 Object {
-                  "coordinates": Array [
-                    52.3809553943508,
-                    4.939309666406198,
-                  ],
-                },
-                Object {
+                  "city": "Amsterdam",
                   "coordinates": Array [
                     52.3809553943508,
                     4.939309666406198,
@@ -254,10 +302,6 @@ exports[`<Main/> rendered correctly 1`] = `
             className="cities__map"
             coords={
               Array [
-                Array [
-                  52.3809553943508,
-                  4.939309666406198,
-                ],
                 Array [
                   52.3809553943508,
                   4.939309666406198,

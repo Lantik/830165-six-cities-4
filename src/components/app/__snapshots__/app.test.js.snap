@@ -8,13 +8,21 @@ exports[`<App/> rendered correctly 1`] = `
       path="/"
     >
       <Main
+        activeCity="Test city"
         offers={
           Array [
-            Object {},
-            Object {},
-            Object {},
+            Object {
+              "city": "Amsterdam",
+            },
+            Object {
+              "city": "Capenhagen",
+            },
+            Object {
+              "city": "Test city",
+            },
           ]
         }
+        onCityTitleClick={[Function]}
         onOfferHeaderClick={[Function]}
       />
     </Route>
@@ -23,12 +31,22 @@ exports[`<App/> rendered correctly 1`] = `
       path="/offer"
     >
       <OfferDetails
-        offer={Object {}}
+        offer={
+          Object {
+            "city": "Amsterdam",
+          }
+        }
         offers={
           Array [
-            Object {},
-            Object {},
-            Object {},
+            Object {
+              "city": "Amsterdam",
+            },
+            Object {
+              "city": "Capenhagen",
+            },
+            Object {
+              "city": "Test city",
+            },
           ]
         }
         onOfferHeaderClick={[Function]}
