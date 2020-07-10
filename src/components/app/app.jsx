@@ -17,22 +17,21 @@ class App extends PureComponent {
 
     this.state = {
       screen: APP_SCREENS.MAIN,
-      offer: props.offers[0]
     };
-
-    this._handleOfferTitleClick = this._handleOfferTitleClick.bind(this);
-  }
-
-  _handleOfferTitleClick(offer) {
-    this.setState({
-      screen: APP_SCREENS.OFFER_PROPERTY,
-      offer
-    });
   }
 
   _renderAccomodationScreen() {
-    const {offers, city, onCityTitleClick} = this.props;
-    const {offer, screen} = this.state;
+    const {
+      offers,
+      city,
+      onCityTitleClick,
+      onSortOptionClick,
+      sortType,
+      onOfferCardMouseEnter,
+      offer: activOffer,
+      onOfferHeaderClick
+    } = this.props;
+    const {screen} = this.state;
 
     switch (screen) {
       case APP_SCREENS.MAIN:
@@ -40,15 +39,29 @@ class App extends PureComponent {
           <Main
             offers = {offers}
             activeCity={city}
-            onOfferHeaderClick={this._handleOfferTitleClick}
+            onOfferHeaderClick={(offer) => {
+              this.setState({
+                screen: APP_SCREENS.OFFER_PROPERTY,
+              });
+              onOfferHeaderClick(offer);
+            }}
             onCityTitleClick={onCityTitleClick}
+            sortType={sortType}
+            onSortOptionClick={onSortOptionClick}
+            onOfferCardMouseEnter={onOfferCardMouseEnter}
+            offer={activOffer}
           />);
       case APP_SCREENS.OFFER_PROPERTY:
         return (
           <OfferDetails
-            offer={offer}
+            offer={activOffer}
             offers={offers}
-            onOfferHeaderClick={this._handleOfferTitleClick}/>
+            onOfferHeaderClick={(offer) => {
+              this.setState({
+                screen: APP_SCREENS.OFFER_PROPERTY,
+              });
+              onOfferHeaderClick(offer);
+            }}/>
         );
       default :
         return null;
@@ -56,17 +69,11 @@ class App extends PureComponent {
   }
 
   render() {
-    const {offers} = this.props;
-    const {offer} = this.state;
-
     return (
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
             {this._renderAccomodationScreen()}
-          </Route>
-          <Route exact path="/offer">
-            <OfferDetails offer={offer} offers={offers} onOfferHeaderClick={this._handleOfferTitleClick}/>
           </Route>
           <Route exact path="/dev-component">
           </Route>
@@ -79,18 +86,35 @@ class App extends PureComponent {
 App.propTypes = {
   offers: PropTypes.array.isRequired,
   city: PropTypes.string.isRequired,
-  onCityTitleClick: PropTypes.func.isRequired
+  onCityTitleClick: PropTypes.func.isRequired,
+  onSortOptionClick: PropTypes.func.isRequired,
+  sortType: PropTypes.string.isRequired,
+  onOfferCardMouseEnter: PropTypes.func.isRequired,
+  offer: PropTypes.object,
+  onOfferHeaderClick: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
   offers: state.offers,
-  city: state.city
+  city: state.city,
+  sortType: state.sortType,
+  offer: state.offer
 });
 
 const mapDispatchToProps = (dispatch) => ({
   onCityTitleClick(city) {
     dispatch(ActionCreator.changeCity(city));
+    dispatch(ActionCreator.changeActiveOffer(undefined));
   },
+  onSortOptionClick(sortType) {
+    dispatch(ActionCreator.changeSortType(sortType));
+  },
+  onOfferCardMouseEnter(offer) {
+    dispatch(ActionCreator.changeActiveOffer(offer));
+  },
+  onOfferHeaderClick(offer) {
+    dispatch(ActionCreator.changeActiveOffer(offer));
+  }
 });
 
 export {App};

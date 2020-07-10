@@ -11,6 +11,7 @@ exports[`<NearbyOfferList /> rendered correctly 1`] = `
       Object {},
     ]
   }
+  onOfferCardMouseEnter={[Function]}
   onOfferHeaderClick={[Function]}
 />
 `;

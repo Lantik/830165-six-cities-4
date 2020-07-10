@@ -2,15 +2,42 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CitiesOfferList from '../offer-list/proxy/cities-offer-list/cities-offer-list.jsx';
 import CityList from '../city-list/city-list.jsx';
+import SortOptions from '../sort-options/sort-options.jsx';
 import Map from '../map/map.jsx';
+import {SortType} from '../../const/application.js';
 
+const getSortFunction = (sortType) => {
+  switch (sortType) {
+    case SortType.PRICE_LOW_TO_HIGH:
+      return (a, b) => a.price - b.price;
+    case SortType.PRICE_HIGH_TO_LOW:
+      return (a, b) => b.price - a.price;
+    case SortType.RATE_HIGHT_TO_LOW:
+      return (a, b) => a.rating - b.rating;
+    default:
+      return undefined;
+  }
+};
 
-const Main = ({offers, onOfferHeaderClick, onCityTitleClick, activeCity}) => {
-  const cityOffers = offers.filter((it) => it.city === activeCity);
+const Main = (props) => {
+  const {
+    offers,
+    onOfferHeaderClick,
+    onCityTitleClick,
+    activeCity,
+    onSortOptionClick,
+    sortType,
+    onOfferCardMouseEnter,
+    offer
+  } = props;
+
+  const cityOffers = offers.filter((it) => it.city === activeCity)
+    .sort(getSortFunction(sortType));
   const offersCoords = cityOffers.map((it) => it.coordinates);
   const cities = offers.map((it) => it.city)
     .filter((it, i, self) => self.indexOf(it) === i);
   const mainEmptyClass = cityOffers.length === 0 ? `page__main--index-empty` : ``;
+  const activeOfferCoords = offer && offer.coordinates;
 
   return (<div className="page page--gray page--main">
     <header className="header">
@@ -65,28 +92,15 @@ const Main = ({offers, onOfferHeaderClick, onCityTitleClick, activeCity}) => {
               <section className="cities__places places">
                 <h2 className="visually-hidden">Places</h2>
                 <b className="places__found">{cityOffers.length} places to stay in {activeCity}</b>
-                <form className="places__sorting" action="#" method="get">
-                  <span className="places__sorting-caption">Sort by</span>
-                  <span className="places__sorting-type" tabIndex="0">
-                    Popular
-                    <svg className="places__sorting-arrow" width="7" height="4">
-                      <use xlinkHref="#icon-arrow-select"></use>
-                    </svg>
-                  </span>
-                  <ul className="places__options places__options--custom places__options--opened">
-                    <li className="places__option places__option--active" tabIndex="0">Popular</li>
-                    <li className="places__option" tabIndex="0">Price: low to high</li>
-                    <li className="places__option" tabIndex="0">Price: high to low</li>
-                    <li className="places__option" tabIndex="0">Top rated first</li>
-                  </ul>
-                </form>
+                <SortOptions onSortOptionClick={onSortOptionClick} sortType={sortType}/>
                 <CitiesOfferList
                   offers={cityOffers}
                   onOfferHeaderClick={onOfferHeaderClick}
+                  onOfferCardMouseEnter={onOfferCardMouseEnter}
                 />
               </section>
               <div className="cities__right-section">
-                <Map className={`cities__map`} coords={offersCoords} />
+                <Map className={`cities__map`} coords={offersCoords} activeCoords={activeOfferCoords}/>
               </div>
             </div>
           )}
@@ -99,7 +113,13 @@ Main.propTypes = {
   offers: PropTypes.array.isRequired,
   onOfferHeaderClick: PropTypes.func.isRequired,
   onCityTitleClick: PropTypes.func.isRequired,
-  activeCity: PropTypes.string.isRequired
+  activeCity: PropTypes.string.isRequired,
+  onSortOptionClick: PropTypes.func.isRequired,
+  sortType: PropTypes.string.isRequired,
+  onOfferCardMouseEnter: PropTypes.func.isRequired,
+  offer: PropTypes.shape({
+    coordinates: PropTypes.arrayOf(PropTypes.number).isRequired
+  })
 };
 
 export default Main;

@@ -1,6 +1,7 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import Main from './main.jsx';
+import {SortType} from '../../const/application.js';
 
 const mock = {
   offers: [
@@ -27,6 +28,9 @@ it(`<Main/> rendered correctly with offers in active city`, () => {
     activeCity={`Amsterdam`}
     onOfferHeaderClick={() => {}}
     onCityTitleClick={() => {}}
+    onSortOptionClick={() => {}}
+    sortType={SortType.DEFAULT}
+    onOfferCardMouseEnter={() => {}}
   />);
   const tree = renderer.getRenderOutput();
 
@@ -42,6 +46,9 @@ it(`<Main /> rendered correcyly without offers in active city`, () => {
     activeCity={`London`}
     onOfferHeaderClick={() => {}}
     onCityTitleClick={() => {}}
+    onSortOptionClick={() => {}}
+    sortType={SortType.DEFAULT}
+    onOfferCardMouseEnter={() => {}}
   />);
   const tree = renderer.getRenderOutput();
 

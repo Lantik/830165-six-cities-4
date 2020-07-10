@@ -23,33 +23,10 @@ exports[`<App/> rendered correctly 1`] = `
           ]
         }
         onCityTitleClick={[Function]}
+        onOfferCardMouseEnter={[Function]}
         onOfferHeaderClick={[Function]}
-      />
-    </Route>
-    <Route
-      exact={true}
-      path="/offer"
-    >
-      <OfferDetails
-        offer={
-          Object {
-            "city": "Amsterdam",
-          }
-        }
-        offers={
-          Array [
-            Object {
-              "city": "Amsterdam",
-            },
-            Object {
-              "city": "Capenhagen",
-            },
-            Object {
-              "city": "Test city",
-            },
-          ]
-        }
-        onOfferHeaderClick={[Function]}
+        onSortOptionClick={[Function]}
+        sortType=""
       />
     </Route>
     <Route

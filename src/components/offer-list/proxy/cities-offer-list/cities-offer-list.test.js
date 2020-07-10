@@ -13,6 +13,7 @@ it(`<CitiesOfferList /> rendered correctly`, () => {
   renderer.render(<CitiesOfferList
     offers={offers}
     onOfferHeaderClick={() => {}}
+    onOfferCardMouseEnter={() => {}}
   />);
   const tree = renderer.getRenderOutput();
 

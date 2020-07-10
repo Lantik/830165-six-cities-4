@@ -13,6 +13,7 @@ it(`<NearbyOfferList /> rendered correctly`, () => {
   renderer.render(<NearbyOfferList
     offers={offers}
     onOfferHeaderClick={() => {}}
+    onOfferCardMouseEnter={() => {}}
   />);
   const tree = renderer.getRenderOutput();
 

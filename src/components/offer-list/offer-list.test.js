@@ -21,6 +21,7 @@ it(`<OfferList/> rendered correctly`, () => {
     onOfferHeaderClick={() => {}}
     className={className}
     offerComponent={mockComponent}
+    onOfferCardMouseEnter={() => {}}
   />);
 
   const tree = renderer.getRenderOutput();

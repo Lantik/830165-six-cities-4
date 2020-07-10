@@ -19,6 +19,10 @@ it(`<App/> rendered correctly`, () => doWithoutPropTypes([Main, OfferDetails], (
     offers={offers}
     city={city}
     onCityTitleClick={onCityTitleClick}
+    onSortOptionClick={() => {}}
+    sortType={``}
+    onOfferCardMouseEnter={() => {}}
+    onOfferHeaderClick={() => {}}
   />);
   const tree = renderer.getRenderOutput();
 
