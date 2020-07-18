@@ -491,7 +491,7 @@ exports[`<OfferDetails/> component rendered correctly 1`] = `
           </section>
         </div>
       </div>
-      <Map
+      <WithMap
         activeCoords={
           Array [
             52.3909553943508,

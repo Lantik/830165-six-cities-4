@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 const CityList = ({activeCity, cities, onCityTitleClick}) => {
   return (
     <ul className="locations__list tabs__list">

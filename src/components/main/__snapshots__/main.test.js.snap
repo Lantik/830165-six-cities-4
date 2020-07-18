@@ -249,7 +249,7 @@ exports[`<Main/> rendered correctly with offers in active city 1`] = `
         <div
           className="cities__right-section"
         >
-          <Map
+          <WithMap
             className="cities__map"
             coords={
               Array [
