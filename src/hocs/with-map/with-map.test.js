@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import renderer from 'react-test-renderer';
 import withMap from './with-map.js';
 
-const MockComponent = ({mapRef}) => {
-  return (<div ref={mapRef}></div>);
+const MockComponent = ({forwardRef}) => {
+  return (<div ref={forwardRef}></div>);
 };
 
 MockComponent.propTypes = {
-  mapRef: PropTypes.shape({current: PropTypes.instanceOf(Element)}).isRequired,
+  forwardRef: PropTypes.shape({current: PropTypes.instanceOf(Element)}).isRequired,
 };
 
 const MockComponentWithMap = withMap(MockComponent);

@@ -66,7 +66,7 @@ const withMap = (Component) => {
       return (
         <Component
           {...this.props}
-          mapRef={this._mapRef}
+          forwardRef={this._mapRef}
         />);
     }
   }

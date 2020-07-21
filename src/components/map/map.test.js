@@ -4,16 +4,16 @@ import {Map} from './map.jsx';
 
 const mock = {
   className: `test__map`,
-  mapRef: React.createRef()
+  forwardRef: React.createRef()
 };
 
 it(`<Map/> rendered correctly`, () => {
-  const {className, mapRef} = mock;
+  const {className, forwardRef} = mock;
 
   const tree = renderer
     .create(<Map
       className={className}
-      mapRef={mapRef}
+      forwardRef={forwardRef}
     />)
     .toJSON();
 
