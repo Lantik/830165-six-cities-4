@@ -77,7 +77,7 @@ const Main = (props) => {
       </div>
       <div className="cities">
         {cityOffers.length === 0
-          ? (<MainEmpty city={activeCity}/>)
+          ? (<MainEmpty />)
           : (
             <div className="cities__places-container container">
               <section className="cities__places places">

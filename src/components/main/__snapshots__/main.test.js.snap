@@ -85,9 +85,7 @@ exports[`<Main /> rendered correcyly without offers in active city 1`] = `
     <div
       className="cities"
     >
-      <MainEmpty
-        city="London"
-      />
+      <MainEmpty />
     </div>
   </main>
 </div>
