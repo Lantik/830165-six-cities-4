@@ -4,6 +4,7 @@ import CitiesOfferList from '../offer-list/proxy/cities-offer-list/cities-offer-
 import CityList from '../city-list/city-list.jsx';
 import SortOptions from '../sort-options/sort-options.jsx';
 import Map from '../map/map.jsx';
+import MainEmpty from '../main-empty/main-empty.jsx';
 import {SortType} from '../../const/application.js';
 
 const getSortFunction = (sortType) => {
@@ -76,17 +77,7 @@ const Main = (props) => {
       </div>
       <div className="cities">
         {cityOffers.length === 0
-          ? (
-            <div className="cities__places-container cities__places-container--empty container">
-              <section className="cities__no-places">
-                <div className="cities__status-wrapper tabs__content">
-                  <b className="cities__status">No places to stay available</b>
-                  <p className="cities__status-description">We could not find any property availbale at the moment in {activeCity}</p>
-                </div>
-              </section>
-              <div className="cities__right-section"></div>
-            </div>
-          )
+          ? (<MainEmpty city={activeCity}/>)
           : (
             <div className="cities__places-container container">
               <section className="cities__places places">
@@ -113,7 +104,7 @@ Main.propTypes = {
   offers: PropTypes.array.isRequired,
   onOfferHeaderClick: PropTypes.func.isRequired,
   onCityTitleClick: PropTypes.func.isRequired,
-  activeCity: PropTypes.string.isRequired,
+  activeCity: PropTypes.string,
   onSortOptionClick: PropTypes.func.isRequired,
   sortType: PropTypes.string.isRequired,
   onOfferCardMouseEnter: PropTypes.func.isRequired,

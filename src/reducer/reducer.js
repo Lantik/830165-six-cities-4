@@ -3,7 +3,7 @@ import offers from '../mocks/offers.js';
 import {SortType} from '../const/application.js';
 
 const initialState = {
-  city: offers[0].city,
+  city: offers[0] ? offers[0].city : ``,
   offers,
   sortType: SortType.DEFAULT,
 };
